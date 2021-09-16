@@ -1,0 +1,5 @@
+-setup 2d lights
+https://www.youtube.com/watch?v=n08EA3svNT8&ab_channel=BMo
+
+-setup tilemap collisions
+https://www.youtube.com/watch?v=wKXqwTpmCSg&ab_channel=BliskenX
