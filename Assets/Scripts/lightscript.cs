@@ -29,7 +29,6 @@ public class lightscript : MonoBehaviour
                 signCheck = 1;
             }
             GetComponent<Light2D>().pointLightInnerRadius = GetComponent<Light2D>().pointLightInnerRadius + (signCheck * 0.5f);
-            Debug.Log("1");
         }
 
     }
