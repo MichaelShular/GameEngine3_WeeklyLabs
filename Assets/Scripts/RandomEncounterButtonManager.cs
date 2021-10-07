@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Has button fuctions that are in the random encounter scene 
+//
+//Version 0.1
+//-button function for change to main scene and keeping player information between scene 
 public class RandomEncounterButtonManager : MonoBehaviour
 {
     private GameObject player;
-    // Start is called before the first frame update
-    private void Awake()
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
+    //exit the back to main world scene
     public void loadGameWorld()
     {
+        //enabling player game object components for main world scene
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<SpriteRenderer>().enabled = true;
+        //passing information to next scene
         DontDestroyOnLoad(player);
         SceneManager.LoadScene("Main");
     }
