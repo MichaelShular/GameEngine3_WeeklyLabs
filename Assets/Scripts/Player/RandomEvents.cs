@@ -25,6 +25,8 @@ public class RandomEvents : MonoBehaviour
             previousLoc = player.transform.position;
             if (distanceForNextEncounter <= totalDistanceTraveled)
             {
+                player.GetComponent<PlayerMovement>().enabled = false;
+                player.GetComponent<SpriteRenderer>().enabled = false;
                 DontDestroyOnLoad(player);
                 SceneManager.LoadScene("RandomEncounterScene"); 
             }

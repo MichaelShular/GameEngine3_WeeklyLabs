@@ -20,6 +20,8 @@ public class RandomEncounterButtonManager : MonoBehaviour
 
     public void loadGameWorld()
     {
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<SpriteRenderer>().enabled = true;
         DontDestroyOnLoad(player);
         SceneManager.LoadScene("Main");
     }
