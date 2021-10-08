@@ -18,11 +18,12 @@ public class RandomEncounterButtonManager : MonoBehaviour
     //exit the back to main world scene
     public void loadGameWorld()
     {
-        //enabling player game object components for main world scene
-        player.GetComponent<PlayerMovement>().enabled = true;
-        player.GetComponent<SpriteRenderer>().enabled = true;
+        
         //passing information to next scene
         DontDestroyOnLoad(player);
         SceneManager.LoadScene("Main");
+        //enabling player game object components for main world scene
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<SpriteRenderer>().enabled = true;
     }
 }
