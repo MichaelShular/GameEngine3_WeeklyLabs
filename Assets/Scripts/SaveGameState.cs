@@ -11,6 +11,13 @@ using UnityEngine.Events;
 public class SaveGameState : MonoBehaviour
 {
     public static UnityEvent OnSaveEvent = new UnityEvent();
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Save();
+        }
+    }
     public void Save()
     {
         OnSaveEvent.Invoke();

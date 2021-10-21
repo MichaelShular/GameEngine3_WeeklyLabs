@@ -14,14 +14,6 @@ public class PlayerSave : MonoBehaviour
     {
          SaveGameState.OnSaveEvent.AddListener(SavePosition);
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SavePosition();
-        }
-    }
     void SavePosition()
     {
         PlayerPrefs.SetFloat("x-axis", this.transform.position.x);
