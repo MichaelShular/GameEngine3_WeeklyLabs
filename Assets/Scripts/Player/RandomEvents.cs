@@ -49,7 +49,7 @@ public class RandomEvents : MonoBehaviour
     //enable flag for random encounter 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        canRandomEncounter = true;
+        //canRandomEncounter = true;
         player = GameObject.FindGameObjectWithTag("Player");
         //setting randomly distance for when next encounter happens 
         distanceForNextEncounter = Random.Range(5, 50);
