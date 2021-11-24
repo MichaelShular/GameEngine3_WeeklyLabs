@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+/// This script is used to control the animations clip of the player are suppose to play
+/// 
+///Version 0.1
+///-check is player is moving  
+
 public enum CardinalDirections
 {
     North,
@@ -11,6 +17,7 @@ public enum CardinalDirections
 public class PlayerAnimationControl : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    private bool isWalking;
     // Start is called before the first frame update
 
     [SerializeField] private CardinalDirections facing = CardinalDirections.South;
@@ -22,8 +29,7 @@ public class PlayerAnimationControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isWalking;
-
+        //to check if player has any movement  
         if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
         {
             isWalking = false;
@@ -32,7 +38,8 @@ public class PlayerAnimationControl : MonoBehaviour
         {
             isWalking = true;
         }
-           
+        
+        //Dirction of animation if player is moving
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             if (Input.GetAxisRaw("Horizontal") < 0)
@@ -55,8 +62,7 @@ public class PlayerAnimationControl : MonoBehaviour
                 facing = CardinalDirections.North;
             }
         }
-
-
+        //sending information to animator to play animations
         animator.SetBool("isWalking", isWalking);
         animator.SetInteger("WalkDirection", (int)facing);
     }
