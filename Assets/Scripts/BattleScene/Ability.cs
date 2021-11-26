@@ -12,8 +12,19 @@ public class Ability : ScriptableObject
 
     [SerializeField] private IEffect[] effects; 
 
-    void Cast(ICharacter self, ICharacter other)
+    public void Cast(ICharacter self, ICharacter other)
     {
+        //Debug.Log("Cast " + name);
+        self.onAbilityCast.Invoke(this, self);
 
+        if (self.incapacitated)
+        {
+            Debug.Log("Stunned");
+            return;
+        }
+        foreach (IEffect effect in effects)
+        {
+            effect.ApplyEffect(self, other);
+        }
     }
 }
