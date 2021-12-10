@@ -29,6 +29,7 @@ public class Encounter : MonoBehaviour
         currentCharacter = player;
         haveVisableUI = true;
         player.onAbilityCast.AddListener(OnAbilityCastCallBack);
+        player.charactersAnimation.SetInteger("AnimationState", 4);
     }
 
     public void OnAbilityCastCallBack(Ability casted, ICharacter self)
@@ -43,6 +44,8 @@ public class Encounter : MonoBehaviour
     {
         if (currentCharacter == player)
         {
+            player.charactersAnimation.SetInteger("AnimationState", 4);
+
             currentCharacter = enemy;
         }
         else

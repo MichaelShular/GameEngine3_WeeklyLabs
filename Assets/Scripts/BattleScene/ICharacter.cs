@@ -15,8 +15,10 @@ public abstract class ICharacter : MonoBehaviour
 
     private Encounter encounter;
     public UnityEvent<Ability, ICharacter> onAbilityCast;
+
     public void UseAbilty(int abilitySlot, ICharacter self, ICharacter opponent)
     {
+        
         abilities[abilitySlot].Cast(self, opponent);
     }
 
